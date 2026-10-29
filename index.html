@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV Motor Digital Twin</title>
+    <meta name="description" content="Interactive EV traction motor digital twin with physics simulation, real-time telemetry, 3D PMSM visualization, fault injection, diagnostics, and data export." />
+    <meta property="og:title" content="EV Motor Digital Twin" />
+    <meta property="og:description" content="Interactive EV traction motor digital twin with physics simulation, real-time telemetry, 3D PMSM visualization, fault injection, diagnostics, and data export." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully ignore Vite client HMR/WebSocket transport errors when HMR is disabled in AI Studio
+      window.addEventListener('error', function(event) {
+        if (event && (
+          (event.message && (event.message.indexOf('WebSocket') !== -1 || event.message.indexOf('createWebSocketModuleRunnerTransport') !== -1)) ||
+          (event.filename && event.filename.indexOf('@vite/client') !== -1)
+        )) {
+          event.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(event) {
+        var str = String((event && event.reason && (event.reason.stack || event.reason.message)) || event && event.reason || '');
+        if (str.indexOf('WebSocket') !== -1 || str.indexOf('@vite/client') !== -1 || str.indexOf('createWebSocketModuleRunnerTransport') !== -1) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-slate-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

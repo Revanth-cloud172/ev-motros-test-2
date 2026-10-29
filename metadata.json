@@ -1,0 +1,11 @@
+{
+  "name": "EV Motor Digital Twin",
+  "description": "Interactive EV traction motor digital twin with physics simulation, real-time telemetry, 3D PMSM visualization, fault injection, diagnostics, and data export.",
+  "requestFramePermissions": [
+    "serial",
+    "usb"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
